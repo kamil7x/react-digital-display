@@ -1,6 +1,6 @@
 {
   "name": "react-digital-display",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React component for displaying text",
   "main": "src/index.ts",
   "scripts": {
