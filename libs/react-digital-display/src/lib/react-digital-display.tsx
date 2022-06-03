@@ -1,6 +1,11 @@
 import React, { useMemo } from 'react';
 
-import { DisplayModule, SpecialChar, UnknownCharacterMode } from './types';
+import {
+  DisplayModule,
+  DisplayModuleColors,
+  SpecialChar,
+  UnknownCharacterMode,
+} from './types';
 
 import styles from './react-digital-display.module.scss';
 
@@ -10,6 +15,7 @@ export interface ReactDigitalDisplayProps {
   size: number;
   height?: number;
   unknownCharacterMode?: UnknownCharacterMode;
+  colors?: DisplayModuleColors;
 }
 
 export const ReactDigitalDisplay = ({
@@ -18,6 +24,7 @@ export const ReactDigitalDisplay = ({
   size,
   height,
   unknownCharacterMode = 'omit',
+  colors,
 }: ReactDigitalDisplayProps) => {
   const textArray = useMemo(
     () => (typeof text === 'string' ? text.split('') : text),
@@ -72,7 +79,7 @@ export const ReactDigitalDisplay = ({
         style={{ transform: `scale(${dimensions.scale})` }}
       >
         {textToDisplay.map((char) => (
-          <ModuleComponent char={char} />
+          <ModuleComponent char={char} colors={colors} />
         ))}
       </div>
     </div>

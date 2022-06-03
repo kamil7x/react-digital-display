@@ -3,14 +3,14 @@
 $segment-width: 32px;
 $segment-length: $segment-width * 3;
 $segment-margin: math.div($segment-width, 16);
-$segment-active-color: #000;
-$segment-inactive-color: #eee;
+$segment-active-color: var(--rdd-active-color);
+$segment-inactive-color: var(--rdd-inactive-color);
 
 $border-size: math.div($segment-width, 2);
 
 $module-width: $segment-length + $segment-width * 2 + $segment-margin * 2;
 $module-height: $segment-length * 2 + $segment-width * 2 + $segment-margin * 4;
-$module-background-color: transparent;
+$module-background-color: var(--rdd-background-color);
 
 .module {
   box-sizing: border-box;

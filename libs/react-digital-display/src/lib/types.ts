@@ -10,8 +10,15 @@ export interface Charset<DataType> {
   [key: string | SpecialChar]: DataType;
 }
 
+export interface DisplayModuleColors {
+  active?: string;
+  inactive?: string;
+  background?: string;
+}
+
 export interface DisplayModuleProps {
   char: string;
+  colors?: DisplayModuleColors;
 }
 
 export type DisplayModule<DataType> = React.ElementType<DisplayModuleProps> & {

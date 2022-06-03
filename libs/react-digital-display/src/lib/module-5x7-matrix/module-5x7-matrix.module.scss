@@ -1,13 +1,13 @@
 $module-padding: 8px;
-$module-background-color: #9bb901;
+$module-background-color: var(--rdd-background-color);
 
 $rows: 7;
 $columns: 5;
 $dot-size: 24px;
 $dot-gap: 2px;
 
-$dot-background-color: $module-background-color;
-$dot-background-color-active: #111;
+$dot-background-color: var(--rdd-inactive-color);
+$dot-background-color-active: var(--rdd-active-color);
 $dot-border-radius: 25%;
 
 .module {

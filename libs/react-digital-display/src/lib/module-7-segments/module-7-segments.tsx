@@ -1,4 +1,5 @@
-import { DisplayModule } from '../types';
+import { DisplayModule, DisplayModuleColors } from '../types';
+import { useColorsVariables } from '../utils';
 import { Segment } from './components/segment';
 import { Module7SegmentsCharset, SEGMENTS } from './consts';
 
@@ -14,11 +15,20 @@ export type Module7SegmentsDataType = [
   g: boolean
 ];
 
+const defaultColors: Required<DisplayModuleColors> = {
+  active: '#000',
+  inactive: '#eee',
+  background: 'transparent',
+};
+
 export const Module7Segments: DisplayModule<Module7SegmentsDataType> = ({
   char,
+  colors,
 }) => {
+  const style = useColorsVariables(defaultColors, colors);
+
   return (
-    <div className={styles.module}>
+    <div className={styles.module} style={style}>
       <div className={styles.inner}>
         {SEGMENTS.map((segment, index) => (
           <Segment
